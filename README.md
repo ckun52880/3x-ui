@@ -32,7 +32,7 @@
 ## Install & Upgrade
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/MHSanaei/3x-ui/refs/tags/v2.5.8/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/ckun52880/3x-ui/mainme/install.sh)
 ```
 
 ## Install legacy Version (we don't recommend)
