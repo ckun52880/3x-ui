@@ -1581,23 +1581,6 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 		)
 		prompt_message := t.I18nBot("tgbot.messages.comment_prompt", "ClientComment=="+client_Comment)
 		t.SendMsgToTgbot(chatId, prompt_message, cancel_btn_markup)
-	default:
-		// dynamic callbacks
-		if strings.HasPrefix(callbackQuery.Data, "client_sub_links ") {
-			email := strings.TrimPrefix(callbackQuery.Data, "client_sub_links ")
-			t.sendClientSubLinks(chatId, email)
-			return
-		}
-		if strings.HasPrefix(callbackQuery.Data, "client_individual_links ") {
-			email := strings.TrimPrefix(callbackQuery.Data, "client_individual_links ")
-			t.sendClientIndividualLinks(chatId, email)
-			return
-		}
-		if strings.HasPrefix(callbackQuery.Data, "client_qr_links ") {
-			email := strings.TrimPrefix(callbackQuery.Data, "client_qr_links ")
-			t.sendClientQRLinks(chatId, email)
-			return
-		}
 	case "add_client_ch_default_traffic":
 		inlineKeyboard := tu.InlineKeyboard(
 			tu.InlineKeyboardRow(
@@ -1812,6 +1795,23 @@ func (t *Tgbot) answerCallback(callbackQuery *telego.CallbackQuery, isAdmin bool
 			msg := fmt.Sprintf("📧 %s\n%s", extra_emails, t.I18nBot("tgbot.noResult"))
 			t.SendMsgToTgbot(chatId, msg, tu.ReplyKeyboardRemove())
 
+		}
+	default:
+		// dynamic callbacks
+		if strings.HasPrefix(callbackQuery.Data, "client_sub_links ") {
+			email := strings.TrimPrefix(callbackQuery.Data, "client_sub_links ")
+			t.sendClientSubLinks(chatId, email)
+			return
+		}
+		if strings.HasPrefix(callbackQuery.Data, "client_individual_links ") {
+			email := strings.TrimPrefix(callbackQuery.Data, "client_individual_links ")
+			t.sendClientIndividualLinks(chatId, email)
+			return
+		}
+		if strings.HasPrefix(callbackQuery.Data, "client_qr_links ") {
+			email := strings.TrimPrefix(callbackQuery.Data, "client_qr_links ")
+			t.sendClientQRLinks(chatId, email)
+			return
 		}
 	}
 }
