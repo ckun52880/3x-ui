@@ -30,6 +30,17 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 
 For full documentation, please visit the [project Wiki](https://github.com/MHSanaei/3x-ui/wiki).
 
+## SSH Port Forwarding Management 
+```bash
+ssh -L <本地端口>:127.0.0.1:<远程面板端口> <服务器用户名>@<服务器IP>
+# 例：ssh -L 54321:127.0.0.1:55555 root@178.157.58.201
+ 
+# 若 SSH 用非默认端口（如 2222），加 -p 2222：
+ 
+ssh -fN -p 2222 -L <本地端口>:127.0.0.1:<远程面板端口> <服务器用户名>@<服务器IP>
+# 例：ssh -fN -p 2222 -L 54321:127.0.0.1:55555 root@178.157.58.201
+```
+
 ## A Special Thanks to
 
 - [alireza0](https://github.com/alireza0/)
