@@ -30,6 +30,22 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 
 For full documentation, please visit the [project Wiki](https://github.com/MHSanaei/3x-ui/wiki).
 
+## Install legacy Version (we don't recommend)
+
+To install your desired version, use following installation command. e.g., ver :v1.7.9
+
+```bash
+VERSION=v1.7.9 && bash <(curl -Ls "https://raw.githubusercontent.com/mhsanaei/3x-ui/$VERSION/install.sh") $VERSION
+```
+
+## Install Custom Version (we don't recommend)
+
+To install your desired version, add the version to the end of the installation command. e.g., ver v2.2.0:
+
+```bash
+bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) v2.2.0
+```
+
 ## SSH Port Forwarding Management 
 ```bash
 ssh -L <本地端口>:127.0.0.1:<远程面板端口> <服务器用户名>@<服务器IP>
